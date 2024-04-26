@@ -1,0 +1,15 @@
+{
+    "name": "blosc2 mmap testing",
+    "image": "blosc2",
+    "initializeCommand": "docker build --file .devcontainer/Dockerfile --network host --tag blosc2 .",
+    "runArgs": ["--name", "blosc2"],
+    "mounts": [
+        "source=/mnt/blosc_test_files,target=/workspaces/blosc_mmap/test_files_nfs,type=bind",
+        "source=/proc,target=/writable_proc,type=bind"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": ["GitHub.copilot", "ms-vscode.cpptools-extension-pack", "ms-python.python"]
+        }
+    }
+}
